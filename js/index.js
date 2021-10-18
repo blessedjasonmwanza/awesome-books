@@ -7,26 +7,25 @@ if (savedBooks && savedBooks !== null) {
 
 const displayBooks = () => {
   booksElement.innerHTML = '';
-  for (const bookId in books) {
-    if (Object.hasOwnProperty.call(books, bookId)) {
-      const book = books[bookId];
-      booksElement.innerHTML += `
-          <span class="book" >
-            <span>${book.title}</span>
-            <br>
-            <span>${book.author}</span>
-            <br>
-            <button onclick="removeBook(${bookId});">Remove</button>
-            <hr>
-          </span>
-        `;
-    }
+  for (let bookId = 0; bookId < books.length; bookId += 1) {
+    const book = books[bookId];
+    booksElement.innerHTML += `
+        <span class="book" >
+          <span>${book.title}</span>
+          <br>
+          <span>${book.author}</span>
+          <br>
+          <button onclick="removeBook(${bookId});">Remove</button>
+          <hr>
+        </span>
+      `;
   }
 };
-const addBook = (title, author) => {
+
+const addBook = (bookTitle, bookAuthor) => {
   books.push({
-    title: title,
-    author: author,
+    title: bookTitle,
+    author: bookAuthor,
   });
   localStorage.setItem('books', JSON.stringify(books));
   displayBooks();
@@ -43,8 +42,8 @@ displayBooks();
 const submitForm = document.querySelector('.add-books-form');
 submitForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  let bookAuthor = document.querySelector('#book-author').value;
-  let bookTitle = document.querySelector('#book-title').value;
+  const bookAuthor = document.querySelector('#book-author').value;
+  const bookTitle = document.querySelector('#book-title').value;
   addBook(bookAuthor, bookTitle);
   submitForm.reset();
 });
