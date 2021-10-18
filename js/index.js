@@ -1,10 +1,10 @@
 const booksElement = document.querySelector('#books-list');
-let books = [
-  {
-    title: 'Human Species',
-    author: 'Blessed Jason Mwanza',
-  },
-];
+const savedBooks = localStorage.getItem('books');
+let books = [];
+if (savedBooks && savedBooks !== null) {
+  books = JSON.parse(savedBooks);
+}
+
 const displayBooks = () => {
   booksElement.innerHTML = '';
   for (const bookId in books) {
@@ -28,11 +28,13 @@ const addBook = (title, author) => {
     title: title,
     author: author,
   });
+  localStorage.setItem('books', JSON.stringify(books));
   displayBooks();
 };
 const removeBook = (bookId) => {
   if (bookId !== null && bookId !== undefined) {
     books.splice(bookId, 1);
+    localStorage.setItem('books', JSON.stringify(books));
     displayBooks();
   }
 };
