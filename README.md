@@ -1,10 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# My Portfolio - Microverse
+# My Awesome-Books
 
-> This is my first mobile version Portfolio Project built under Microverse program.
+> Pure JavaScript Book store Project built under Microverse program.
 
-![my-portfolio-screenshot desktop](./images/website-preview.png)
+![Awesome-Books Project](./images/snap.png)
 
 
 ## Built With
@@ -15,7 +15,7 @@
 
 ## Live Demo
 coming soon...
-<!-- [Click here to view Live website Demo](https://blessedjasonmwanza.github.io/awesome-books/) -->
+Live Demo [Can be viewed](https://blessedjasonmwanza.github.io/awesome-books/) when live.
 
 
 ## Getting Started
