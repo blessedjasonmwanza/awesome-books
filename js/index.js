@@ -23,3 +23,10 @@ const displayBooks = () =>{
     }
   }
 }
+const addBook = (title, author) =>{
+  books.push({
+    title: title,
+    author: author,
+  });
+  displayBooks();
+}
