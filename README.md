@@ -4,7 +4,7 @@
 
 > Pure JavaScript Book store Project built under Microverse program.
 
-<!-- ![my-portfolio-screenshot desktop](./images/) -->
+![Awesome-Books Project](./images/snap.png)
 
 
 ## Built With
