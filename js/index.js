@@ -30,3 +30,12 @@ const addBook = (title, author) =>{
   });
   displayBooks();
 }
+const removeBook = (bookId) =>{
+  if(bookId !== null && bookId !== undefined){
+    books.splice(bookId, 1);
+    displayBooks();
+  }
+}
+displayBooks();
+addBook('Title here', 'blessed');
+removeBook(1);
