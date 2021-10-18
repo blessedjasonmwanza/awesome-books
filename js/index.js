@@ -38,7 +38,7 @@ const removeBook = (bookId) => {
   }
 };
 displayBooks();
-
+removeBook();
 const submitForm = document.querySelector('.add-books-form');
 submitForm.addEventListener('submit', (e) => {
   e.preventDefault();
