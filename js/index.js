@@ -1,4 +1,3 @@
-const savedBooks = localStorage.getItem('books');
 class Books {
   constructor(savedBooks) {
     this.savedBooks = savedBooks;
@@ -39,8 +38,13 @@ class Books {
     }
   }
 }
-
-const books = new Books(JSON.parse(savedBooks));
+let savedBooks = localStorage.getItem('books');
+if(savedBook) {
+  savedBooks = JSON.parse(savedBooks);
+}else{
+  savedBooks = [];
+}
+const books = new Books(savedBooks);
 books.display();
 const removeBook = (bookId) => books.remove(bookId);
 removeBook();
