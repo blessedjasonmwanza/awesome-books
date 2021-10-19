@@ -1,4 +1,3 @@
-const savedBooks = localStorage.getItem('books');
 class Books {
   constructor(savedBooks) {
     this.savedBooks = savedBooks;
@@ -10,14 +9,14 @@ class Books {
     for (let bookId = 0; bookId < this.savedBooks.length; bookId += 1) {
       const book = this.savedBooks[bookId];
       this.booksElement.innerHTML += `
-          <span class="book" >
+          <div class="book" >
+          <span id="book-details">
+          <span>${book.author}</span>
+            <span class="separator">by</span>
             <span>${book.title}</span>
-            <br>
-            <span>${book.author}</span>
-            <br>
-            <button onclick="removeBook(${bookId});">Remove</button>
-            <hr>
           </span>
+            <button onclick="removeBook(${bookId});">Remove</button>
+          </div>
         `;
     }
   }
@@ -39,8 +38,13 @@ class Books {
     }
   }
 }
-
-const books = new Books(JSON.parse(savedBooks));
+let savedBooks = localStorage.getItem('books');
+if (savedBooks) {
+  savedBooks = JSON.parse(savedBooks);
+} else {
+  savedBooks = [];
+}
+const books = new Books(savedBooks);
 books.display();
 const removeBook = (bookId) => books.remove(bookId);
 removeBook();
