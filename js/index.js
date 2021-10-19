@@ -39,7 +39,7 @@ class Books {
   }
 }
 let savedBooks = localStorage.getItem('books');
-if (savedBook) {
+if (savedBooks) {
   savedBooks = JSON.parse(savedBooks);
 } else {
   savedBooks = [];
