@@ -1,12 +1,12 @@
-const savedBooks = localStorage.getItem('books');
+const savedBooks = localStorage.getItem("books");
 class Books {
   constructor(savedBooks) {
     this.savedBooks = savedBooks;
-    this.booksElement = document.querySelector('#books-list');
+    this.booksElement = document.querySelector("#books-list");
   }
 
   display() {
-    this.booksElement.innerHTML = '';
+    this.booksElement.innerHTML = "";
     for (let bookId = 0; bookId < this.savedBooks.length; bookId += 1) {
       const book = this.savedBooks[bookId];
       this.booksElement.innerHTML += `
@@ -27,15 +27,22 @@ class Books {
       title: bookTitle,
       author: bookAuthor,
     });
-    localStorage.setItem('books', JSON.stringify(this.savedBooks));
+    localStorage.setItem("books", JSON.stringify(this.savedBooks));
     this.display();
   }
 
   remove(bookId) {
     if (bookId !== null && bookId !== undefined) {
       this.savedBooks.splice(bookId, 1);
-      localStorage.setItem('books', JSON.stringify(this.savedBooks));
+      localStorage.setItem("books", JSON.stringify(this.savedBooks));
       this.display();
     }
   }
 }
+
+const books = new Books(JSON.parse(savedBooks));
+books.display();
+const removeBook = (bookId) => books.remove(bookId);
+removeBook();
+
+const submitForm = document.querySelector(".add-books-form");
