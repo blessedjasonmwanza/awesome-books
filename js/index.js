@@ -46,3 +46,11 @@ const removeBook = (bookId) => books.remove(bookId);
 removeBook();
 
 const submitForm = document.querySelector(".add-books-form");
+
+submitForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const bookAuthor = document.querySelector("#book-author").value;
+  const bookTitle = document.querySelector("#book-title").value;
+  books.add(bookAuthor, bookTitle);
+  submitForm.reset();
+});
