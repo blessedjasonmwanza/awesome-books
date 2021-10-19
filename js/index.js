@@ -10,14 +10,14 @@ class Books {
     for (let bookId = 0; bookId < this.savedBooks.length; bookId += 1) {
       const book = this.savedBooks[bookId];
       this.booksElement.innerHTML += `
-          <span class="book" >
+          <div class="book" >
+          <span id="book-details">
+          <span>${book.author}</span>
+            <span class="separator">by</span>
             <span>${book.title}</span>
-            <br>
-            <span>${book.author}</span>
-            <br>
-            <button onclick="removeBook(${bookId});">Remove</button>
-            <hr>
           </span>
+            <button onclick="removeBook(${bookId});">Remove</button>
+          </div>
         `;
     }
   }
