@@ -39,9 +39,9 @@ class Books {
   }
 }
 let savedBooks = localStorage.getItem('books');
-if(savedBook) {
+if (savedBook) {
   savedBooks = JSON.parse(savedBooks);
-}else{
+} else {
   savedBooks = [];
 }
 const books = new Books(savedBooks);
