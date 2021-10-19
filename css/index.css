@@ -23,16 +23,19 @@ body {
   margin: 16px;
   font-size: 14px;
 }
+
 .add-books-form {
   display: flex;
   flex-direction: column;
   font-size: larger;
   margin: 0 35%;
 }
+
 #submitBtn {
   align-self: flex-end;
   width: 20%;
 }
+
 @media only screen and (max-width: 600px) {
   .add-books-form {
     margin: 10%;
