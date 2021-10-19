@@ -1,12 +1,12 @@
-const savedBooks = localStorage.getItem("books");
+const savedBooks = localStorage.getItem('books');
 class Books {
   constructor(savedBooks) {
     this.savedBooks = savedBooks;
-    this.booksElement = document.querySelector("#books-list");
+    this.booksElement = document.querySelector('#books-list');
   }
 
   display() {
-    this.booksElement.innerHTML = "";
+    this.booksElement.innerHTML = '';
     for (let bookId = 0; bookId < this.savedBooks.length; bookId += 1) {
       const book = this.savedBooks[bookId];
       this.booksElement.innerHTML += `
@@ -27,14 +27,14 @@ class Books {
       title: bookTitle,
       author: bookAuthor,
     });
-    localStorage.setItem("books", JSON.stringify(this.savedBooks));
+    localStorage.setItem('books', JSON.stringify(this.savedBooks));
     this.display();
   }
 
   remove(bookId) {
     if (bookId !== null && bookId !== undefined) {
       this.savedBooks.splice(bookId, 1);
-      localStorage.setItem("books", JSON.stringify(this.savedBooks));
+      localStorage.setItem('books', JSON.stringify(this.savedBooks));
       this.display();
     }
   }
@@ -45,12 +45,12 @@ books.display();
 const removeBook = (bookId) => books.remove(bookId);
 removeBook();
 
-const submitForm = document.querySelector(".add-books-form");
+const submitForm = document.querySelector('.add-books-form');
 
-submitForm.addEventListener("submit", (e) => {
+submitForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const bookAuthor = document.querySelector("#book-author").value;
-  const bookTitle = document.querySelector("#book-title").value;
+  const bookAuthor = document.querySelector('#book-author').value;
+  const bookTitle = document.querySelector('#book-title').value;
   books.add(bookAuthor, bookTitle);
   submitForm.reset();
 });
