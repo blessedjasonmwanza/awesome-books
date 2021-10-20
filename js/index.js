@@ -5,7 +5,7 @@ class Books {
   }
 
   display() {
-    this.booksElement.innerHTML = "";
+    this.booksElement.innerHTML = '';
     for (let bookId = 0; bookId < this.savedBooks.length; bookId += 1) {
       const book = this.savedBooks[bookId];
       this.booksElement.innerHTML += `
@@ -79,4 +79,20 @@ links.forEach((link, i) => {
       navItem.classList.add('hidden');
     }
   });
+});
+
+/* global luxon, luxon */
+
+const displayTime = () => {
+  const currentDate = luxon.DateTime.fromJSDate(new Date());
+  const date = currentDate.toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);
+  document.querySelector('#timestamp').innerHTML = date;
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  luxon.Settings.defaultLocale = 'en';
+  displayTime();
+  setInterval(() => {
+    displayTime();
+  }, 1000);
 });

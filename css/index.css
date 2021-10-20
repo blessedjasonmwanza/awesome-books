@@ -46,8 +46,47 @@ body {
   display: none;
 }
 
+.nav-section {
+  border: 2px solid #000;
+  align-items: center;
+}
+
+.nav-section a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-section a.active{
+  color: #0000ff;
+}
+
 @media only screen and (max-width: 600px) {
   .add-books-form {
     margin: 10%;
   }
+}
+
+/* GENERAL CSS */
+.d-flex {
+  display: flex;
+}
+
+.s-between {
+  justify-content: space-between;
+}
+
+.rows {
+  flex-flow: row wrap;
+}
+
+.cols {
+  flex-flow: column;
+}
+
+.self-right {
+  align-self: flex-end;
+}
+
+.no-margin {
+  margin: 0;
 }
