@@ -10,13 +10,20 @@
 </head>
 
 <body>
-  <header>
-    <h1>All awesome books</h1>
-  </header>
+  <nav id="nav">
+    <a id="navBook" href="#books">Awesome Books</a>
+    <a id="navAdd" href="#add">Add Books</a>
+    <a id="navContact" href="#contact">Contact US</a>
+  </nav>
   <main>
-    <div id="books-list">
-    </div>
-    <form action="#" class="add-books-form">
+    <section id="books" class="hidden">
+      <header>
+        <h1>All awesome books</h1>
+      </header>
+      <div id="books-list">
+      </div>
+    </section>
+    <form id="add" action="#" class="add-books-form hidden">
       <h3>Add a new book</h3>
       <input id="book-title" type="text" placeholder="Title" name="title" required>
       <br>
@@ -24,6 +31,13 @@
       <br>
       <input id="submitBtn" type="submit" value="Add">
     </form>
+    <section id="contact" class="hidden">
+      <p>Name</p>
+      <p>Email</p>
+      <p>Facebook</p>
+      <p>LinkedIn</p>
+      <p>GitHub</p>
+    </section>
   </main>
   <footer>
     <script src="js/index.js"></script>

@@ -42,6 +42,10 @@ body {
   box-shadow: 3px 3px 4px 0;
 }
 
+.hidden {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   .add-books-form {
     margin: 10%;
