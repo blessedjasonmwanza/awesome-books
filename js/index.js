@@ -59,18 +59,16 @@ submitForm.addEventListener('submit', (e) => {
   submitForm.reset();
 });
 
-const booksLink = document.querySelector('#navBook');
-const addLink = document.querySelector('#navAdd');
-const contactLink = document.querySelector('#navContact');
-const links = [booksLink, addLink, contactLink];
+const links = Array.from(document.querySelectorAll('#nav a'));
 
 const booksPage = document.querySelector('#books');
 const addPage = document.querySelector('#add');
 const contactPage = document.querySelector('#contact');
 const pages = [booksPage, addPage, contactPage];
-
 links.forEach((link, i) => {
   link.addEventListener('click', () => {
+    links.forEach((element) => element.classList.remove('active'));
+    link.classList.add('active');
     const target = pages.filter((id) => i === pages.indexOf(id));
     const nonTarget = pages.filter((id) => i !== pages.indexOf(id));
     target[0].classList.remove('hidden');
