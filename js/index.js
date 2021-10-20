@@ -84,9 +84,7 @@ links.forEach((link, i) => {
 
 const displayTime = () => {
   const currentDate = luxon.DateTime.fromJSDate(new Date());
-  const date = currentDate.toLocaleString(
-    luxon.DateTime.DATETIME_MED_WITH_SECONDS
-  );
+  const date = currentDate.toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);
   document.querySelector('#timestamp').innerHTML = date;
 };
 
