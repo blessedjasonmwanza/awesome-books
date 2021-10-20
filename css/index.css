@@ -56,7 +56,7 @@ body {
   color: #000;
 }
 
-.nav-section a.active{
+.nav-section a.active {
   color: #0000ff;
 }
 
@@ -97,4 +97,16 @@ body {
 
 .no-margin {
   margin: 0;
+}
+
+.footer {
+  border: 2px solid black;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  margin-right: 160px;
+  margin-bottom: 0.5%;
+  padding: 8px;
 }
