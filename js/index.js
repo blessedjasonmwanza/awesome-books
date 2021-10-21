@@ -50,16 +50,6 @@ books.display();
 const removeBook = (bookId) => books.remove(bookId);
 removeBook();
 
-const submitForm = document.querySelector('.add-books-form');
-
-submitForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const bookAuthor = document.querySelector('#book-author').value;
-  const bookTitle = document.querySelector('#book-title').value;
-  books.add(bookAuthor, bookTitle);
-  submitForm.reset();
-});
-
 const links = Array.from(document.querySelectorAll('#nav a'));
 
 const booksPage = document.querySelector('#books');
@@ -78,6 +68,18 @@ links.forEach((link, i) => {
       navItem.classList.add('hidden');
     }
   });
+});
+
+const submitForm = document.querySelector('.add-books-form');
+
+submitForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const bookAuthor = document.querySelector('#book-author').value;
+  const bookTitle = document.querySelector('#book-title').value;
+  books.add(bookAuthor, bookTitle);
+  submitForm.reset();
+  booksPage.classList.remove('hidden');
+  addPage.classList.add('hidden');
 });
 
 /* global luxon, luxon */
